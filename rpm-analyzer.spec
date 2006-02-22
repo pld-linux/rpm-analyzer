@@ -4,13 +4,14 @@ Version:	1.0
 Release:	1
 Source0:	%{name}-%{version}.tar.bz2
 #Source0-MD5:	af90f4cb43b21f4597a2fd3b6eb80f5d
+Patch0:		%{name}-fhs.patch
 License:	GPL
 Group:		Applications
-Requires:	libxml2-python
-Requires:	pygtk2
-Requires:	python2 >= 2.2
-Requires:	rhpl
-Requires:	rpm-python
+Requires:	python >= 2.2
+Requires:	python-libxml2
+Requires:	python-pygtk-gtk >= 2.0
+Requires:	python-rhpl
+Requires:	python-rpm
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -23,14 +24,16 @@ installing comps.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make}
+sed -ie 's!/usr/bin/python2!/usr/bin/python!g' src/*.py
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} DESTDIR=$RPM_BUILD_ROOT BINDIR=%{_bindir} install
 %{__make} MANDIR=$RPM_BUILD_ROOT/%{_mandir} install-man
 
 %clean
@@ -39,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc COPYING Changelog
-%{_prefix}/local/bin/rpm-analyzer
+%attr(755,root,root) %{_bindir}/rpm-analyzer
 %dir %{_datadir}/rpm-analyzer
 %{_datadir}/rpm-analyzer/*.py
 %dir %{_datadir}/rpm-analyzer/package_mgr
