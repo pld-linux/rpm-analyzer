@@ -5,9 +5,11 @@ Version:	1.0
 Release:	1
 License:	GPL
 Group:		Applications
+# http://www.maisondubonheur.com/rpm-analyzer/dl/rpm-analyzer-1.0-17.src.rpm
 Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	af90f4cb43b21f4597a2fd3b6eb80f5d
 Patch0:		%{name}-fhs.patch
+URL:		http://www.maisondubonheur.com/rpm-analyzer/
 Requires:	python >= 2.2
 Requires:	python-libxml2
 Requires:	python-pygtk-gtk >= 2.0
@@ -52,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING Changelog
+%doc Changelog
 %attr(755,root,root) %{_bindir}/rpm-analyzer
 %dir %{_datadir}/rpm-analyzer
 %{_datadir}/rpm-analyzer/*.py
