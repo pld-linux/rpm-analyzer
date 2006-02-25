@@ -1,12 +1,13 @@
 Summary:	A graphical interface for RPM analyze
+Summary(pl):	Graficzny interfejs do analizy pakietów RPM
 Name:		rpm-analyzer
 Version:	1.0
 Release:	1
-Source0:	%{name}-%{version}.tar.bz2
-#Source0-MD5:	af90f4cb43b21f4597a2fd3b6eb80f5d
-Patch0:		%{name}-fhs.patch
 License:	GPL
 Group:		Applications
+Source0:	%{name}-%{version}.tar.bz2
+# Source0-md5:	af90f4cb43b21f4597a2fd3b6eb80f5d
+Patch0:		%{name}-fhs.patch
 Requires:	python >= 2.2
 Requires:	python-libxml2
 Requires:	python-pygtk-gtk >= 2.0
@@ -22,6 +23,13 @@ user-defined rpm configuration. This tool is hdlist based and may
 require a comps.xml file for some features so please consider
 installing comps.
 
+%description -l pl
+rpm-analyzer udostêpnia graficzny interfejs pozwalaj±cy ogl±daæ
+zale¿no¶ci pakietów RPM zgodnie z lokaln± lub zdefiniowan± przez
+u¿ytkownika konfiguracj± rpm-a. To narzêdzie jest oparte o hdlist i
+mo¿e wymagaæ do niektórych opcji pliku comps.xml, wiêc warto rozwa¿yæ
+doinstalowanie comps.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -33,8 +41,11 @@ sed -ie 's!/usr/bin/python2!/usr/bin/python!g' src/*.py
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT BINDIR=%{_bindir} install
-%{__make} MANDIR=$RPM_BUILD_ROOT/%{_mandir} install-man
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	BINDIR=%{_bindir}
+%{__make} install-man \
+	MANDIR=$RPM_BUILD_ROOT%{_mandir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
