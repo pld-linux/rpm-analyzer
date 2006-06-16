@@ -1,14 +1,12 @@
 Summary:	A graphical interface for RPM analyze
 Summary(pl):	Graficzny interfejs do analizy pakietów RPM
 Name:		rpm-analyzer
-Version:	1.0
+Version:	1.22
 Release:	1
 License:	GPL
 Group:		Applications
-# http://www.maisondubonheur.com/rpm-analyzer/dl/rpm-analyzer-1.0-17.src.rpm
-Source0:	%{name}-%{version}.tar.bz2
-# Source0-md5:	af90f4cb43b21f4597a2fd3b6eb80f5d
-Patch0:		%{name}-fhs.patch
+Source0:	http://www.maisondubonheur.com/rpm-analyzer/dl/%{name}-%{version}.tar.bz2
+# Source0-md5:	438175254630409300c656a89c08f406
 URL:		http://www.maisondubonheur.com/rpm-analyzer/
 Requires:	python >= 2.2
 Requires:	python-libxml2
@@ -34,7 +32,6 @@ doinstalowanie comps.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__make}
