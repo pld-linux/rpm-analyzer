@@ -1,5 +1,5 @@
 Summary:	A graphical interface for RPM analyze
-Summary(pl):	Graficzny interfejs do analizy pakietów RPM
+Summary(pl.UTF-8):   Graficzny interfejs do analizy pakietÃ³w RPM
 Name:		rpm-analyzer
 Version:	1.22
 Release:	1
@@ -23,11 +23,11 @@ user-defined rpm configuration. This tool is hdlist based and may
 require a comps.xml file for some features so please consider
 installing comps.
 
-%description -l pl
-rpm-analyzer udostêpnia graficzny interfejs pozwalaj±cy ogl±daæ
-zale¿no¶ci pakietów RPM zgodnie z lokaln± lub zdefiniowan± przez
-u¿ytkownika konfiguracj± rpm-a. To narzêdzie jest oparte o hdlist i
-mo¿e wymagaæ do niektórych opcji pliku comps.xml, wiêc warto rozwa¿yæ
+%description -l pl.UTF-8
+rpm-analyzer udostÄ™pnia graficzny interfejs pozwalajÄ…cy oglÄ…daÄ‡
+zaleÅ¼noÅ›ci pakietÃ³w RPM zgodnie z lokalnÄ… lub zdefiniowanÄ… przez
+uÅ¼ytkownika konfiguracjÄ… rpm-a. To narzÄ™dzie jest oparte o hdlist i
+moÅ¼e wymagaÄ‡ do niektÃ³rych opcji pliku comps.xml, wiÄ™c warto rozwaÅ¼yÄ‡
 doinstalowanie comps.
 
 %prep
