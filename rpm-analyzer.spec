@@ -1,5 +1,5 @@
 Summary:	A graphical interface for RPM analyze
-Summary(pl.UTF-8):   Graficzny interfejs do analizy pakietów RPM
+Summary(pl.UTF-8):	Graficzny interfejs do analizy pakietów RPM
 Name:		rpm-analyzer
 Version:	1.22
 Release:	1
